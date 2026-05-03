@@ -8,8 +8,8 @@ from __future__ import annotations
 import logging
 import re
 
-from app.core.config import get_settings
-from app.core.exceptions import OutOfScopeError
+from core.config import get_settings
+from core.exceptions import OutOfScopeError
 
 logger = logging.getLogger(__name__)
 
