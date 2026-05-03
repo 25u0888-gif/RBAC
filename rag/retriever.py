@@ -9,9 +9,9 @@ from typing import Any
 
 import numpy as np
 
-from app.rag.embeddings import embed_query
-from app.rag.vector_store import VectorStore
-from app.core.config import get_settings
+from rag.embeddings import embed_query
+from rag.vector_store import VectorStore
+from core.config import get_settings
 
 logger = logging.getLogger(__name__)
 
