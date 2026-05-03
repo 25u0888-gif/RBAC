@@ -9,12 +9,12 @@ import logging
 import time
 from typing import Any
 
-from app.core.config import get_settings
-from app.guardrails.guardrail_chain import run_input_guardrails, run_output_guardrails
-from app.monitoring.latency_tracker import track_latency
-from app.rag.generator import generate
-from app.rag.retriever import retrieve
-from app.rag.vector_store import VectorStore
+from core.config import get_settings
+from guardrails.guardrail_chain import run_input_guardrails, run_output_guardrails
+from monitoring.latency_tracker import track_latency
+from rag.generator import generate
+from rag.retriever import retrieve
+from rag.vector_store import VectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -41,9 +41,9 @@ def rebuild_vector_store() -> VectorStore:
     Called after document upload/delete to keep the index in sync.
     """
     global _store
-    from app.rag.document_loader import load_all_documents
-    from app.rag.embeddings import embed_texts
-    from app.core.utils import chunk_text
+    from rag.document_loader import load_all_documents
+    from rag.embeddings import embed_texts
+    from core.utils import chunk_text
 
     settings = get_settings()
 
@@ -97,9 +97,9 @@ def ingest_single_document(doc_id: str, filename: str, content: bytes) -> int:
     Returns the number of chunks added.
     """
     global _store
-    from app.rag.document_loader import LOADERS
-    from app.rag.embeddings import embed_texts
-    from app.core.utils import chunk_text
+    from rag.document_loader import LOADERS
+    from rag.embeddings import embed_texts
+    from core.utils import chunk_text
     from pathlib import Path
 
     settings = get_settings()
