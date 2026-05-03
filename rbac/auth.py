@@ -13,10 +13,10 @@ import jwt
 from passlib.context import CryptContext
 from pymongo.database import Database
 
-from app.core.config import get_settings
-from app.core.exceptions import AuthenticationError
-from app.core.utils import generate_id, utc_now
-from app.rbac.models import UserDocument, get_user_role_names
+from core.config import get_settings
+from core.exceptions import AuthenticationError
+from core.utils import generate_id, utc_now
+from rbac.models import UserDocument, get_user_role_names
 
 logger = logging.getLogger(__name__)
 
@@ -96,7 +96,7 @@ def register_user(
     # Assign role
     role = db["roles"].find_one({"name": role_name})
     if not role:
-        from app.rbac.models import RoleDocument
+        from rbac.models import RoleDocument
         new_role = RoleDocument(name=role_name, description=f"{role_name.capitalize()} role").to_mongo()
         db["roles"].insert_one(new_role)
         role = new_role
