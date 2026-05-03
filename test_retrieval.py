@@ -1,5 +1,5 @@
-from app.rag.pipeline import get_vector_store
-from app.rag.retriever import retrieve
+from rag.pipeline import get_vector_store
+from rag.retriever import retrieve
 
 store = get_vector_store()
 query = "What is PaySphere?"
