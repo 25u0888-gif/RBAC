@@ -8,7 +8,7 @@ from __future__ import annotations
 import logging
 import re
 
-from app.guardrails.pii_detector import redact_pii
+from guardrails.pii_detector import redact_pii
 
 logger = logging.getLogger(__name__)
 
