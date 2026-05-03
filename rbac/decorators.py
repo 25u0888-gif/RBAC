@@ -10,7 +10,7 @@ from typing import Any, Callable
 
 from fastapi import HTTPException, Request
 
-from app.core.exceptions import AuthorisationError
+from core.exceptions import AuthorisationError
 
 logger = logging.getLogger(__name__)
 
