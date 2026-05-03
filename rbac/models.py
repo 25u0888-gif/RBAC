@@ -11,7 +11,7 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from app.core.utils import generate_id, utc_now
+from core.utils import generate_id, utc_now
 
 
 # ── Enums ───────────────────────────────────────────────────────────────────
