@@ -1,0 +1,68 @@
+[build]
+  command = "echo 'Building...'"
+  publish = "frontend"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundle = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/docs"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/redoc"
+  to = "/.netlify/functions/api"
+  status = 200
+
+[[redirects]]
+  from = "/openapi.json"
+  to = "/.netlify/functions/api"
+  status = 200
+
+# UI Route Mappings (Static)
+[[redirects]]
+  from = "/"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/chat"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/policies"
+  to = "/policies.html"
+  status = 200
+
+[[redirects]]
+  from = "/documents"
+  to = "/documents.html"
+  status = 200
+
+[[redirects]]
+  from = "/compliance"
+  to = "/compliance.html"
+  status = 200
+
+[[redirects]]
+  from = "/audit-logs"
+  to = "/audit_logs.html"
+  status = 200
+
+[[redirects]]
+  from = "/team-access"
+  to = "/team_access.html"
+  status = 200

@@ -16,3 +16,4 @@ openai
 faiss-cpu
 PyPDF2
 requests
+mangum
