@@ -14,8 +14,8 @@ from fastapi.responses import JSONResponse
 from starlette.middleware.base import BaseHTTPMiddleware, RequestResponseEndpoint
 from starlette.responses import Response
 
-from app.core.exceptions import AuthenticationError
-from app.rbac.auth import decode_access_token
+from core.exceptions import AuthenticationError
+from rbac.auth import decode_access_token
 
 logger = logging.getLogger(__name__)
 
