@@ -108,7 +108,7 @@ def api_query(
 
 @rag_router.get("/documents")
 def api_list_docs(payload: dict = Depends(get_current_user_payload), db: Database = Depends(get_db)):
-    from app.core.utils import generate_id, utc_now
+    from core.utils import generate_id, utc_now
     roles = payload.get("roles", [])
     allowed_ids = get_allowed_doc_ids(db, roles)
     
@@ -149,8 +149,8 @@ def api_assign_role(body: RoleAssignRequest, db: Database = Depends(get_db)):
 
 @admin_router.post("/documents", dependencies=[Depends(require_roles("admin"))])
 def api_upload_doc(file: UploadFile = File(...), db: Database = Depends(get_db)):
-    from app.core.utils import generate_id, utc_now
-    from app.rag.pipeline import ingest_single_document
+    from core.utils import generate_id, utc_now
+    from rag.pipeline import ingest_single_document
     
     content = file.file.read()
     
@@ -184,7 +184,7 @@ def api_upload_doc(file: UploadFile = File(...), db: Database = Depends(get_db))
 
 @admin_router.delete("/documents/{doc_id}", dependencies=[Depends(require_roles("admin"))])
 def api_delete_doc(doc_id: str, db: Database = Depends(get_db)):
-    from app.rag.pipeline import get_vector_store
+    from rag.pipeline import get_vector_store
     
     result = db["documents"].delete_one({"_id": doc_id})
     if result.deleted_count == 0:
@@ -206,7 +206,7 @@ def api_delete_doc(doc_id: str, db: Database = Depends(get_db)):
 @admin_router.post("/reindex", dependencies=[Depends(require_roles("admin"))])
 def api_reindex():
     """Rebuild the entire FAISS vector index from all MongoDB documents."""
-    from app.rag.pipeline import rebuild_vector_store
+    from rag.pipeline import rebuild_vector_store
     try:
         store = rebuild_vector_store()
         return {"message": f"Re-index complete. {store.count} vectors in index."}
