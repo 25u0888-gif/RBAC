@@ -11,7 +11,7 @@ import sys
 from datetime import datetime, timezone
 from typing import Any
 
-from app.core.config import get_settings
+from core.config import get_settings
 
 
 class JSONFormatter(logging.Formatter):
