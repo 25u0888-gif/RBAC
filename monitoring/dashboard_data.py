@@ -10,8 +10,8 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from app.monitoring.cost_tracker import get_recent_usage, get_usage_summary
-from app.monitoring.latency_tracker import get_latency_stats
+from monitoring.cost_tracker import get_recent_usage, get_usage_summary
+from monitoring.latency_tracker import get_latency_stats
 
 logger = logging.getLogger(__name__)
 
