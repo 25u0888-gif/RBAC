@@ -10,8 +10,8 @@ from typing import Any
 
 from pymongo.database import Database
 
-from app.core.utils import generate_id, utc_now
-from app.rbac.models import RoleName
+from core.utils import generate_id, utc_now
+from rbac.models import RoleName
 
 logger = logging.getLogger(__name__)
 
