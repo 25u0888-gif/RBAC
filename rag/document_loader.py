@@ -11,7 +11,7 @@ import hashlib
 from pathlib import Path
 from typing import Any
 
-from app.core.database import get_database
+from core.database import get_database
 
 logger = logging.getLogger(__name__)
 
