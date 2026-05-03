@@ -10,9 +10,9 @@ import logging
 import time as _time
 from typing import Any
 
-from app.core.config import get_settings
-from app.core.exceptions import GenerationError
-from app.monitoring.cost_tracker import record_usage
+from core.config import get_settings
+from core.exceptions import GenerationError
+from monitoring.cost_tracker import record_usage
 
 logger = logging.getLogger(__name__)
 
