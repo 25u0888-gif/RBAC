@@ -7,10 +7,10 @@ from __future__ import annotations
 
 import logging
 
-from app.core.config import get_settings
-from app.core.exceptions import GuardrailViolation, PIIDetectedError
-from app.guardrails.pii_detector import contains_pii, detect_pii
-from app.guardrails.scope_checker import check_scope
+from core.config import get_settings
+from core.exceptions import GuardrailViolation, PIIDetectedError
+from guardrails.pii_detector import contains_pii, detect_pii
+from guardrails.scope_checker import check_scope
 
 logger = logging.getLogger(__name__)
 
