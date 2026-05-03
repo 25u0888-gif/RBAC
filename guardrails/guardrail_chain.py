@@ -8,8 +8,8 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from app.guardrails.input_filter import validate_input
-from app.guardrails.output_filter import sanitise_output
+from guardrails.input_filter import validate_input
+from guardrails.output_filter import sanitise_output
 
 logger = logging.getLogger(__name__)
 
